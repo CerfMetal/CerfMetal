@@ -1,0 +1,63 @@
+/* ---------- Content ---------- */
+.content {
+    text-align: center;
+    height: 75vh;
+    margin: 30px 5% 0 5%;
+    border: solid white;
+}
+
+.title {
+    display: inline-block;
+    padding-left: 4.5%;
+    margin-top: 25vh;
+}
+
+.content-title {
+    text-shadow: rgba(132, 132, 132, 0.9) 2px 4px;
+    font-size: 3vw;
+    color: white;
+    overflow: hidden;
+    border-right: 25px solid rgba(158, 157, 157, 0.9);
+    white-space: nowrap;
+    letter-spacing: .15em;
+    animation: typing 0.75s steps(8, end), blinking 1.2s step-end infinite;
+}
+  
+@keyframes typing {
+    from { 
+        width: 0% 
+    }
+    to { 
+        width: 100% 
+    }
+}
+
+@keyframes blinking {
+    from, to { 
+        border-color: transparent 
+    }
+    50% { 
+        border-color: rgba(158, 157, 157, 0.9); 
+    }
+}
+
+.description {
+    display: inline-block;
+    color: white;
+    font-size: 1.8vw;
+    overflow: hidden;
+    margin:0;
+    padding:0;
+}
+
+.socials {
+    display: inline-block;
+    width: 40px;
+    margin-top: 20px;
+    padding: 0 5px 0 5px;
+    filter: invert(63%) sepia(0%) saturate(20%) hue-rotate(150deg) brightness(60%) contrast(90%);
+}
+
+.socials:hover {
+    filter: invert(100%)  brightness(82%);
+}

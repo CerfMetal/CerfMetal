@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="./css/projects.css">
+        <link rel="stylesheet" href="./css/nav-bar.css">
+
+        <script src="./js/git.js"></script>
+        <script src="./js/ping.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <title>Projects | Tom Croux</title>
+    </head>
+    <body>
+        <div class="container">
+            <button class="menuButton"><ion-icon class="menuIcon" name="menu-outline"></ion-icon></button>
+            <div class="navbar">
+                <div class="navbar-items">
+                    <a class="active left navbar-text" href="/"><pre class="larger">Home</pre></a>
+                    <a class="inactive middle navbar-text" href="/projects"><pre>Projects</pre></a>
+                    <a class="inactive right navbar-text" href="/aboutme"><pre>About me</pre></a>
+                </div>
+                <div class="navbar-logo">
+                    <a class="navbar-logo" href="/">
+                        <span class="name">Tom Croux</span>
+                        <span class="nickname">CerfMetal</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <h1 class="title">Projects</h1>
+            <table id="table">
+
+            </table>
+            
+        </div>
+        
+        <!------ Scripts ------>
+        <!-- Check if user connected to vpn -->
+        <script>
+            // Run when the page is loaded
+            $(document).ready(function() {
+                getLatestCommit();
+            });
+        </script>
+        
+        <!-- Mobile menu button script -->
+        <script>
+            var btn = document.querySelector('button.menuButton');
+            var menu = document.querySelector('div.menu');
+
+            btn.addEventListener('click', updateBtn);
+
+            function updateBtn() {
+                if (menu.classList.contains('open')) {
+                    menu.classList.remove('open');
+                } else {
+                    menu.classList.add('open');
+                }
+            }
+        </script>
+        
+        <!-- Import ionic icons -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+  
+</html>

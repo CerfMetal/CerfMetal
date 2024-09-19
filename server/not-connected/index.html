@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../../css/not-connected.css">
+        <link rel="stylesheet" href="../../css/nav-bar.css">
+
+        <script src="js/ping.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        
+        <meta http-equiv="refresh" content="10;URL=https://cerfmetal.com">
+
+
+        <title>Home | Tom Croux</title>
+    </head>
+    <body>
+        <div class="container">
+            <button class="menuButton"><ion-icon class="menuIcon" name="menu-outline"></ion-icon></button>
+            <div class="navbar">
+                <div class="navbar-items">
+                    <a class="active left navbar-text" href="/"><pre class="larger">Home</pre></a>
+                    <a class="inactive middle navbar-text" href="/"><pre>Projects</pre></a>
+                    <a class="inactive right navbar-text" href="/"><pre id="server-connection">Server</pre></a>
+                </div>
+                <div class="navbar-logo">
+                    <a class="navbar-logo" href="/">
+                        <span class="name">Tom Croux</span>
+                        <span class="nickname">CerfMetal</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1 class="title">Not connected</h1>
+            <h2 class="not-connected-msg">It looks like you are not securely connected to our server!</h1>
+            <h3 class="not-connected-msg">If you would like to have a sneak peak of what it looks like, you can <a href="https://cerfmetal.com/server/home-preview/" class=preview-btn>preview</a> it.</h2>
+            <h4 class="mb-mistake-msg">If you think this is a mistake, you can <a href="https://server.cerfmetal.com" class="still-connect">click here</a> to try connecting to the server.</h3>
+            <h3 class="redirect-msg">You'll be redirected in 10 seconds.</h2>
+        </div>
+
+        <!------ Scripts ------>
+        <!-- Check if user connectd to vpn -->
+        <script>
+            // Run when the page is loaded
+            $(document).ready(function() {
+                // Check if the user has access to the personal server
+                ping('https://nas.cerfmetal.com/').then(function(ping) {
+                    $('#server-connection').css('color', 'lightgreen');
+                    $('#server-connection').css('animation', '5s ease-out 0s infinite opacityAnimation;');
+                })
+            });
+        </script>
+        
+        <!-- Mobile menu button script -->
+        <script>
+            var btn = document.querySelector('button.menuButton');
+            var menu = document.querySelector('div.menu');
+
+            btn.addEventListener('click', updateBtn);
+
+            function updateBtn() {
+            if (menu.classList.contains('open')) {
+                menu.classList.remove('open');
+            } else {
+                menu.classList.add('open');
+            }
+            }
+        </script>
+        
+        <!-- Import ionic icons -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+  
+</html>

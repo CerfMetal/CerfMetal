@@ -1,0 +1,104 @@
+@import url('http://fonts.cdnfonts.com/css/menlo');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(31, 30, 30, 1);
+    font-family: 'Menlo', sans-serif;
+    display: inline;
+}
+
+/* ---------- Navigation  bar ---------- */
+.container {
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    overflow: hidden;
+    margin: 20px 5% 0px 5%;
+    /* Align all elements to a baseline */
+    vertical-align: baseline;
+}
+.navbar a {
+    float: left;
+    text-decoration: none;
+}
+
+.navbar-logo {
+    float: left;
+    padding: 10px;
+
+    font-size: 1.4em;
+    color: white;
+    word-spacing: -10px;
+    font-weight: bold;
+}
+
+.nickname {
+    color: rgba(31, 30, 30, 1);
+    background-color: white;
+    border-radius: 0 10px 10px 0;
+    border: 10px solid white;
+}
+
+.navbar-items {
+    float: right;
+}
+
+.navbar-text {
+    padding: 0px 15px 0px 15px;
+    font-size: 1.8em;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+}
+
+.navbar-text:hover {
+    background-color: white;
+    color:rgba(31, 30, 30, 1);
+}
+.larger {
+    letter-spacing: 1.5px;
+}
+
+.left:hover {
+    border-radius: 10px 0 0 10px;
+}
+
+.right:hover {
+    border-radius: 0 10px 10px 0;
+}
+
+@keyframes opacityAnimation {
+    from, to {
+        opacity: 50%;
+    }
+    50% {
+        opacity: 90%;
+    }
+}
+  
+#server-connection {
+    color: white;
+}
+
+/* Mobile view */
+@media screen and (max-width: 850px) {
+    .navbar-logo {
+        float: left;
+        padding: 2px;
+    
+        font-size: 1.2em;
+        color: white;
+        word-spacing: -3px;
+        font-weight: bold;
+    }
+
+    .nickname {
+        color: rgba(31, 30, 30, 1);
+        background-color: white;
+        border-radius: 0 10px 10px 0;
+        border: 5px solid white;
+    }
+}

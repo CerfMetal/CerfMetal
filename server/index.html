@@ -1,0 +1,9 @@
+<script src="../js/ping.js"></script>
+<script>
+    // Check if the user has access to the personal server
+    ping('https://nas.cerfmetal.com/').then(function(ping) {
+        window.location.href = 'https://nas.cerfmetal.com/';
+    }).catch(function(error) {
+        window.location.href = 'not-connected';
+    })
+</script>
