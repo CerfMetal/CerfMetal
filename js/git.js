@@ -73,7 +73,7 @@ function showCommits() {
         }
 
         // Link to the repository
-        html += `<span title="GitHub"><a href="${url}" target="_blank"><img class="title_logo github" src="./img/github_logo.svg" alt="Github logo"></a></span></h2><hr>`;
+        html += `<span title="GitHub"><a href="${url}" target="_blank"><img class="title_logo github" src="../img/github_logo.svg" alt="Github logo"></a></span></h2><hr>`;
 
         // Description
         if (description != null) {
