@@ -4,11 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="./css/projects.css">
-        <link rel="stylesheet" href="./css/nav-bar.css">
+        <link rel="stylesheet" href="../css/projects.css">
+        <link rel="stylesheet" href="../css/nav-bar.css">
 
-        <script src="./js/git.js"></script>
-        <script src="./js/ping.js"></script>
+        <script src="../js/git.js"></script>
+        <script src="../js/ping.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
         <title>Projects | Tom Croux</title>
@@ -40,28 +40,11 @@
         </div>
         
         <!------ Scripts ------>
-        <!-- Check if user connected to vpn -->
         <script>
             // Run when the page is loaded
             $(document).ready(function() {
                 getLatestCommit();
             });
-        </script>
-        
-        <!-- Mobile menu button script -->
-        <script>
-            var btn = document.querySelector('button.menuButton');
-            var menu = document.querySelector('div.menu');
-
-            btn.addEventListener('click', updateBtn);
-
-            function updateBtn() {
-                if (menu.classList.contains('open')) {
-                    menu.classList.remove('open');
-                } else {
-                    menu.classList.add('open');
-                }
-            }
         </script>
         
         <!-- Import ionic icons -->
