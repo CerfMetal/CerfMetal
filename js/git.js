@@ -69,7 +69,7 @@ function showCommits() {
                 case "java": logo_url = "java_logo.svg"; break;
                 case "php": logo_url = "php_logo.svg"; break;
             }
-            html += `<span title="${language}"><img class="title_logo" src="./img/${logo_url}" alt="${name} logo"/></span>`;
+            html += `<span title="${language}"><img class="title_logo" src="../img/${logo_url}" alt="${name} logo"/></span>`;
         }
 
         // Link to the repository
