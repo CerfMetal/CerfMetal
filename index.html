@@ -14,7 +14,6 @@
     </head>
     <body>
         <div class="container">
-            <button class="menuButton"><ion-icon class="menuIcon" name="menu-outline"></ion-icon></button>
             <div class="navbar">
                 <div class="navbar-items">
                     <a class="active left navbar-text" href="./"><pre class="larger">Home</pre></a>
@@ -37,29 +36,11 @@
                 </div>
                 <br>
                 <h2 class="description">Computer engineering student at Toronto Metropolitan University</h2>
-                <h3 class="description">This is an old project website, currently being renewed</h3>
                 <br>    
                 <a href="https://github.com/CerfMetal"><img class="socials github" src="./img/github_logo.svg" alt="Github logo"></a>
                 <a href="https://www.linkedin.com/in/tom-croux-77815a221"><img class="socials linkedin" src="./img/linkedin_logo.svg" alt="Github logo"></a>
             </div>
         </div>
-        <!-- WORK IN PROGRESS-->
-        <!------ Scripts ------>
-        <!-- Mobile menu button script -->
-        <script>
-            var btn = document.querySelector('button.menuButton');
-            var menu = document.querySelector('div.menu');
-
-            btn.addEventListener('click', updateBtn);
-
-            function updateBtn() {
-                if (menu.classList.contains('open')) {
-                    menu.classList.remove('open');
-                } else {
-                    menu.classList.add('open');
-                }
-            }
-        </script>
         
         <!-- Import ionic icons -->
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

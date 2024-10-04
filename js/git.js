@@ -96,6 +96,20 @@ function addContent(content, id) {
     }
 }
 
+function getImage(start, request2) {
+    var character = request2[start-1];
+    if (character == '(') {
+        character = ")";
+    }
+    // Remove everything before the image
+    var request3 = request2.substring(start);
+
+    // Remove everything after the image
+    var end = request3.indexOf(character);
+    logo_url = request3.substring(0, end);
+    return logo_url;
+}
+
 function getReadme(name, logo_url) {
     var requestURL2 = 'https://raw.githubusercontent.com/CerfMetal/' + name + '/main/README.md';
     // Get the response text of requestURL2
@@ -105,19 +119,16 @@ function getReadme(name, logo_url) {
 
         // Take the first image of the README.md
         var start = request2.indexOf('https://user-images.githubusercontent.com');
+        var start2 = request2.indexOf("https://github.com/user-attachments/assets/")
         if (start != -1) {
-            var character = request2[start-1];
-            if (character == '(') {
-                character = ")";
-            }
-            // Remove everything before the image
-            var request3 = request2.substring(start);
-
-            // Remove everything after the image
-            var end = request3.indexOf(character);
-            logo_url = request3.substring(0, end);
-
+            logo_url = getImage(start, request2);
+            addContent(`<img src="${logo_url}" alt="Image of ${name}">`, `img_${name}`);
         }
+        else if (start2 != -1) {
+            logo_url = getImage(start2, request2);
+            addContent(`<img src="${logo_url}" alt="Image of ${name}">`, `img_${name}`);
+        }
+        
         else if (logo_url != null) {
             // Remove _logo from the language name
             logo_url = "img/" + logo_url.replace("_logo", "");
@@ -128,7 +139,7 @@ function getReadme(name, logo_url) {
         else {
             logo_url = "./img/github.png";
         }
-        addContent(`<img src="${logo_url}" alt="Image of ${name}">`, `img_${name}`);
+        
 
 
         var start_string = ['class="live_demo" href="', 'class="discord_demo" href="'];
